@@ -1,90 +1,115 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Inter, Noto_Sans_KR } from 'next/font/google'
 import styles from './page.module.css'
+import navstyle from './Navbar.module.scss'
+import Navbar from './Navbar'
+import Link from 'next/link'
+import { JetBrains_Mono } from 'next/font/google';
+import Contact from '../components/Contact/Contact';
+import Project from '@/components/Project/Project';
+import { useState } from 'react'
+
+const jetbrains_mono = JetBrains_Mono({
+  weight: ["400"],
+  subsets: ["latin"]
+})
+
+const noto_sans_kr = Noto_Sans_KR({
+  weight: ["400"],
+  subsets: ["latin"]
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className={styles.container}>
+        <Navbar/>
+        <section id="home" className={styles.greeting}>
+          <span id={styles.hi}></span>👋 <br/><span id={styles.name}></span><br/>
+          <span id={styles.greet}></span>
+          <Image 
+          className={styles.arrow}
+          src="darrow.svg" 
+          width={100}
+          height={100}
+          alt="Animated Down Arrow"
+          />
+        </section>
+        <section id="about-me" className={styles.about}>
+          <h2>About Me</h2>
+          <p>I'm a currently a Full Stack Software Developer at Revature. My interests are working on replicating UI designs into my personal proejcts, creating web applications with React/Next.js, and writing scripts to automate tasks.</p>
+          <h2>Technical Skills</h2>
+          <ul className={styles.skills}>
+            <li>Java</li>
+            <li>Spring</li>
+            <li>PostgreSQL</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Sass</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Python</li>
+            <li>Git</li>
+          </ul>
+        </section>
+        <section id="projects" className={styles.projects}>
+          <h2>Projects</h2>
+          <div className={styles.projectlist}>
+            <Project git="" url="" name="Fluttr" image="/fluttr.png" imagew={100} imageh={100} desc="Fluttr, a social media platform for users to share their fleeting and fluttering experiences. Like-minded individuals can share their thoughts, likes posts they enjoy, and follow others to keep in contact."/>
+            <Project git="https://github.com/reidschroder/spree" url="https://github.com/reidschroder/spree" name="Spoint" image="spoint.png" imagew={100} imageh={100} desc="Spoint is an e-commerce platform for shopping clothes."/>
+            <Project git="https://github.com/AndyITZ1/navkord" url="" name="NavKORd" image="navlogo.svg" imagew={100} imageh={100} desc="NavKORd is an open source Discord bot that provides the convenience of a Korean to English and vice versa dictionary!"/>
+            <Project git="https://github.com/AndyITZ1/Geimu" url="" name="Geimu" image="geimu.png" imagew={100} imageh={100} desc="Geimu is an e-commerce platform for shopping video games and plushies. Sign up for an account, add to your cart, and start gaming!"/>
+           
+          </div>
+        </section>
+        <section id="contact" className={styles.contact}>
+          <h2>Reach Out!</h2>
+          <Contact/>
+          {/* <form className={`${styles.cform}`} method="post">
+            <label htmlFor="cname">Name</label>
+            <input className={`${noto_sans_kr.className}`} type="text" id="cname" name="cname" />
+            <label htmlFor="cemail">Email</label>
+            <input className={`${noto_sans_kr.className}`} type="email" id="cemail" name="cemail" />
+            <label htmlFor="cmessage">Message</label>
+            <textarea className={`${noto_sans_kr.className}`} id="cmessage"></textarea>
+        </form> */}
+          <div className={styles.contactpoints}>
+            <div className={styles.contactbox}>
+              <a target="_blank" href="mailto:ltran20sk@gmail.com">
+                <Image
+                src="gmail.svg"
+                alt="Gmail Icon"
+                width={50}
+                height={50}
+                />
+              </a>
+            </div>
+            <div className={styles.contactbox}>
+              <a target="_blank" href="https://github.com/AndyITZ1">
+                <Image
+                src="github.svg"
+                alt="Github Icon"
+                width={50}
+                height={50}
+                />
+              </a>
+            </div>
+            <div className={styles.contactbox}>
+              <a target= "_blank" href="https://www.linkedin.com/in/luantran3/">
+                <Image
+                src="linkedin.svg"
+                alt="LinkedIn Icon"
+                width={50}
+                height={50}
+                />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   )
