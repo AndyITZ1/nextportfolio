@@ -38,23 +38,27 @@ export default function Home() {
           />
         </section>
         <section id="about-me" className={styles.about}>
-          <h2>About Me</h2>
-          <p>I'm a currently a Full Stack Software Developer at Revature. My interests are working on replicating UI designs into my personal proejcts, creating web applications with React/Next.js, and writing scripts to automate tasks.</p>
-          <h2>Technical Skills</h2>
-          <ul className={styles.skills}>
-            <li>Java</li>
-            <li>Spring</li>
-            <li>PostgreSQL</li>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>Sass</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Next.js</li>
-            <li>Python</li>
-            <li>Git</li>
-          </ul>
+          <div className={styles.aboutcontainers}>
+            <h2>About Me</h2>
+            <p>I'm a currently a Full Stack Software Developer at Revature. My interests are working on replicating UI designs into my personal proejcts, creating web applications with React/Next.js, and writing scripts to automate tasks.</p>
+          </div>
+          <div className={styles.aboutcontainers}>
+            <h2>Technical Skills</h2>
+            <ul className={styles.skills}>
+              <li>Java</li>
+              <li>Spring</li>
+              <li>PostgreSQL</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Sass</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Python</li>
+              <li>Git</li>
+            </ul>
+          </div>
         </section>
         <section id="projects" className={styles.projects}>
           <h2>Projects</h2>

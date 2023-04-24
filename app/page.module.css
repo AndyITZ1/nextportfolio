@@ -25,11 +25,26 @@
 }
 
 .about {
+  text-align: center;
   gap: 2rem;
+}
+
+.aboutcontainers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 8px;
 }
 
 .about p {
   width: 600px;
+  padding: 2rem;
+}
+
+.about ul {
+  padding: 2rem;
 }
 
 .projects {
