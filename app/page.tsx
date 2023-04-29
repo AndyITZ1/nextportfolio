@@ -64,7 +64,7 @@ export default function Home() {
           <h2>Projects</h2>
           <div className={styles.projectlist}>
             <Project git="" url="" name="Fluttr" image="/fluttr.png" imagew={100} imageh={100} desc="Fluttr, a social media platform for users to share their fleeting and fluttering experiences. Like-minded individuals can share their thoughts, likes posts they enjoy, and follow others to keep in contact."/>
-            <Project git="https://github.com/reidschroder/spree" url="https://github.com/reidschroder/spree" name="Spoint" image="spoint.png" imagew={100} imageh={100} desc="Spoint is an e-commerce platform for shopping clothes."/>
+            <Project git="https://github.com/reidschroder/spree" url="" name="Spoint" image="spoint.png" imagew={100} imageh={100} desc="Spoint is an e-commerce platform for shopping clothes."/>
             <Project git="https://github.com/AndyITZ1/navkord" url="" name="NavKORd" image="navlogo.svg" imagew={100} imageh={100} desc="NavKORd is an open source Discord bot that provides the convenience of a Korean to English and vice versa dictionary!"/>
             <Project git="https://github.com/AndyITZ1/Geimu" url="" name="Geimu" image="geimu.png" imagew={100} imageh={100} desc="Geimu is an e-commerce platform for shopping video games and plushies. Sign up for an account, add to your cart, and start gaming!"/>
            
@@ -73,14 +73,6 @@ export default function Home() {
         <section id="contact" className={styles.contact}>
           <h2>Reach Out!</h2>
           <Contact/>
-          {/* <form className={`${styles.cform}`} method="post">
-            <label htmlFor="cname">Name</label>
-            <input className={`${noto_sans_kr.className}`} type="text" id="cname" name="cname" />
-            <label htmlFor="cemail">Email</label>
-            <input className={`${noto_sans_kr.className}`} type="email" id="cemail" name="cemail" />
-            <label htmlFor="cmessage">Message</label>
-            <textarea className={`${noto_sans_kr.className}`} id="cmessage"></textarea>
-        </form> */}
           <div className={styles.contactpoints}>
             <div className={styles.contactbox}>
               <a target="_blank" href="mailto:ltran20sk@gmail.com">
